@@ -1,0 +1,59 @@
+.topMenu {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  padding-bottom: 0px;
+  font-size: larger;
+}
+
+.logo {
+  flex-grow: 1;
+  img {
+    cursor: pointer;
+  }
+  div {
+    font-weight: bold;
+    padding-left: 10px;
+  }
+}
+
+.menuItems {
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: space-around;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+}
+
+.sideMenu {
+  flex-grow: 3;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    li {
+      cursor: pointer;
+    }
+  }
+}
+
+.lang {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
