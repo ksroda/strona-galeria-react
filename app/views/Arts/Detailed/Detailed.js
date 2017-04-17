@@ -4,25 +4,66 @@ import PropTypes from 'prop-types'
 //import translate from '../../translate'
 
 import Title from '../../../components/Title/Title'
+import style from './Detailed.scss'
 
-const Detailed = (props) => {
+class Detailed extends React.Component {
 
-  const path = props.location.pathname.replace(/\/\w*/g,'')
-  let item = ''
+  constructor (props) {
+    super(props)
 
-  if (path === 'sculptures') {
-    const data = require('../../../data/sculptures_data')
-    item = data.default.find(obj => obj.id === props.params.id)
+    let item = ''
+    let data = ''
+    const path = props.location.pathname.replace(/\/\w*$/g, '')
+
+    if (path === '/sculptures') {
+      data = require('../../../data/sculptures_data')
+      item = data.default.find(obj => obj.id === props.params.id)
+    }
+    const otherImgs = item.img.other
+
+    this.state = {
+      path,
+      item,
+      directory: `/img/${path}_img/${item.id}/`,
+      img: `${item.img.main}`,
+      otherImgs
+    }
+
+    this.handleImgChange = this.handleImgChange.bind(this)
   }
-  const directory = `img/${path}_img/${item.id}/${item.img.main}`
 
-  return (
-    <div>
-      <Title name={item.title} />
-      <img src={directory} />
-      Author: {item.author}
-    </div>
-  )
+  handleImgChange (img) {
+    const otherImgs = this.state.otherImgs
+    const imgIndex = otherImgs.indexOf(img)
+    otherImgs.splice(imgIndex, 1)
+    otherImgs.push(this.state.img)
+
+    this.setState({
+      img,
+      otherImgs
+    })
+  }
+
+  render () {
+    return (
+      <div>
+        <Title name={this.state.item.title} />
+        <div className={style.detailed}>
+          <img src={`${this.state.directory}${this.state.img}`} />
+
+          <div className={style.descr}>
+            Author: {this.state.item.author}
+          </div>
+        </div>
+        <div className={style.otherImg}>
+          {
+            this.state.otherImgs.map( image =>
+              <img src={`${this.state.directory}${image}`} onClick={() => this.handleImgChange(image)}/> )
+          }
+        </div>
+      </div>
+    )
+  }
 }
 
 Detailed.defaultProps = {
@@ -35,3 +76,4 @@ Detailed.propTypes = {
 
 //export default translate('Detailed')(Detailed)
 export default Detailed
+

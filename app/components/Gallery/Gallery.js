@@ -9,22 +9,26 @@ class Gallery extends React.Component {
   render () {
     return (
       <div className={style.gallery}>
-        { this.props.data.map(item => <GalleryItem key={item.id} data={item} type={this.props.type} />) }
+        { this.props.data.map(item =>
+          <GalleryItem key={item.id} data={item} type={this.props.type} />)
+        }
       </div>
     )
   }
 }
+
 Gallery.defaultProps = {
-  data: []
+  data: [],
+  type: ''
 }
 
 Gallery.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
+  type: PropTypes.string
 }
 
 // export default translate('Gallery')(Gallery)
 export default Gallery
-
 
 /*
   images convention:

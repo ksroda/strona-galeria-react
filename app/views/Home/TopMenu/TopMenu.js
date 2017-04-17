@@ -25,27 +25,27 @@ class TopMenu extends React.Component {
     return (
       <div className={style.topMenu}>
         <div className={style.logo}>
-          <img src="img/logo.PNG" onClick={() => this.handleMenuItemClick('home')} />
+          <img src="/img/logo.PNG" onClick={() => this.handleMenuItemClick('home')} />
           <br/>
           <div>Artistic house</div>
         </div>
 
         <div className={style.menuItems}>
           <ul>
-            <li onClick={() => this.handleMenuItemClick('sculptures')}>Sculptures</li>
-            <li onClick={() => this.handleMenuItemClick('sculptures')}>Paintings</li>
+            <li onClick={() => this.handleMenuItemClick('/sculptures')}>Sculptures</li>
+            <li onClick={() => this.handleMenuItemClick('/sculptures')}>Paintings</li>
           </ul>
 
           <ul>
-            <li onClick={() => this.handleMenuItemClick('sculptures')}>Posters</li>
-            <li onClick={() => this.handleMenuItemClick('sculptures')}>Mosaics</li>
+            <li onClick={() => this.handleMenuItemClick('/sculptures')}>Posters</li>
+            <li onClick={() => this.handleMenuItemClick('/sculptures')}>Mosaics</li>
           </ul>
         </div>
 
         <div className={style.sideMenu}>
           <ul>
-            <li onClick={() => this.handleMenuItemClick('home')}>About</li>
-            <li onClick={() => this.handleMenuItemClick('sculptures/id1')}>Contact</li>
+            <li onClick={() => this.handleMenuItemClick('/home')}>About</li>
+            <li onClick={() => this.handleMenuItemClick('/sculptures/id1')}>Contact</li>
           </ul>
         </div>
 

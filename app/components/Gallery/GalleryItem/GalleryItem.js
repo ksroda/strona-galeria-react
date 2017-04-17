@@ -1,19 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { browserHistory } from 'react-router'
 
 import style from './GalleryItem.scss'
 
-const GalleryItem = (props) => {
-  const directory = `img/${props.type}_img/${props.data.id}/`
+class GalleryItem extends React.Component {
 
-  return (
-    <div className={style.item}>
-      <img src={`${directory}${props.data.img.small}`} />
-      <div className={style.descr}>
-        <div className={style.title}>{ props.data.title }</div>
+  constructor (props) {
+    super(props)
+    this.handleMenuItemClick = this.handleMenuItemClick.bind(this)
+  }
+
+  handleMenuItemClick (item) {
+    browserHistory.push(item)
+  }
+
+  render () {
+    const directory = `img/${this.props.type}_img/${this.props.data.id}/`
+
+    return (
+      <div className={style.item}>
+        <img
+          src={`${directory}${this.props.data.img.small}`}
+          onClick={() => this.handleMenuItemClick(`/${this.props.type}/${this.props.data.id}`)}
+        />
+        <div className={style.descr}>
+          <div className={style.title}>{ this.props.data.title }</div>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 GalleryItem.defaultProps = {

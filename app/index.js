@@ -30,6 +30,7 @@ ReactDOM.render(
         <Route path="home" component={Main} />
         <Route path="sculptures" component={Sculptures} />
         <Route path="sculptures/:id" component={Detailed} />
+
       </Route>
 
       <Redirect from="*" to="home" />
@@ -37,3 +38,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app') // eslint-disable-line
 )
+
