@@ -9,6 +9,7 @@ import { createStore } from 'redux'
 // import createLogger from 'redux-logger'
 
 import About from './views/About/About'
+import Contact from './views/Contact/Contact'
 import Home from './views/Home/Home'
 import Main from './views/Main/Main'
 import Sculptures from './views/Arts/Sculptures/Sculptures'
@@ -27,6 +28,7 @@ ReactDOM.render(
 
       <Route path="/" component={Home}>
         <Route path="about" component={About} />
+        <Route path="contact" component={Contact} />
         <Route path="home" component={Main} />
         <Route path="sculptures" component={Sculptures} />
         <Route path="sculptures/:id" component={Detailed} />

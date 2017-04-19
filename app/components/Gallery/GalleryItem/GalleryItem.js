@@ -25,7 +25,12 @@ class GalleryItem extends React.Component {
           onClick={() => this.handleMenuItemClick(`/${this.props.type}/${this.props.data.id}`)}
         />
         <div className={style.descr}>
-          <div className={style.title}>{ this.props.data.title }</div>
+          <div
+            className={style.title}
+            onClick={() => this.handleMenuItemClick(`/${this.props.type}/${this.props.data.id}`)}
+          >
+            { this.props.data.title }
+          </div>
         </div>
       </div>
     )

@@ -45,7 +45,7 @@ class TopMenu extends React.Component {
         <div className={style.sideMenu}>
           <ul>
             <li onClick={() => this.handleMenuItemClick('/home')}>About</li>
-            <li onClick={() => this.handleMenuItemClick('/sculptures/id1')}>Contact</li>
+            <li onClick={() => this.handleMenuItemClick('/contact')}>Contact us</li>
           </ul>
         </div>
 

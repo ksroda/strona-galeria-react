@@ -7,7 +7,7 @@ const sculptures = [
     img: {
       small: 'small.jpeg',
       main: 'main.jpeg',
-      other: ['other1.jpeg', 'other2.jpeg']
+      other: ['other1.jpeg', 'other2.jpeg', 'small1.jpeg', 'small2.jpeg', 'small3.jpeg', 'small4.jpeg']
     },
     en: {
       description: 'Nananannanananan annananana annnananan'

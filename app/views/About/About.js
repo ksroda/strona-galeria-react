@@ -1,6 +1,6 @@
 import React from 'react'
 
-import translate from '../../translate'
+// import translate from '../../translate'
 
 const About = props => (
   <div>About</div>
